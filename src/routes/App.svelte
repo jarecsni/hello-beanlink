@@ -32,13 +32,13 @@
     import TabBar from '@smui/tab-bar';
     import CounterpartyPicker from './components/counterparty/CounterpartyPicker.svelte';
 	import { CounterpartyService } from './services/CounterpartyService';
-	import { BeanLink } from './beanlink/BeanLink';
+	import { BeanLink } from 'beanlink';
 	import { Streamer } from './datastream/Streamer';
     import EventButton from './components/button/EventButton.svelte';
     import TilesContainer from './components/tiles/TilesContainer.svelte';
 	import { counterpartyChanged } from './components/counterparty/types';
 	import { BookingFeature } from './features/BookingFeature';
-	import { FeatureManager } from './beanlink/FeatureManager';
+	import { FeatureManager } from 'beanlink';
 	import { addNewTile } from './components/tiles/types';
     import { counterpartySpecified } from './features/store';
     
