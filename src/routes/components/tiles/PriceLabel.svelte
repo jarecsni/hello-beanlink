@@ -16,7 +16,7 @@
     let price = 0;
     let arrow:string;
 
-    const { beanLink } = BeanLink.getInstance();
+    const { beanLink, parentBeanLink } = BeanLink.getInstance();
 
     const priceLabelListener = (event:ReturnType<typeof priceLabelSetValue.event>) => {
             if (event.value > price) {
