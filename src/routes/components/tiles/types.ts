@@ -4,7 +4,7 @@ export const closeTile = createEvent<string>('closeTile');
 
 export const symbolChanged = createEvent<{id:string, symbol:string}>('symbolChanged');
 
-export const addNewTile = createEvent<boolean>('addNewTile');
+export const addNewTile = createEvent<void>('addNewTile');
 
 export const priceTickReceived = createEvent<{symbol:string, value:number}>('priceTickReceived');
 

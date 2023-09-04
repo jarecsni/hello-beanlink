@@ -1,3 +1,3 @@
 import { createEvent } from 'beanlink';
 
-export const buttonClicked = createEvent<boolean>('buttonClicked');
+export const buttonClicked = createEvent<void>('buttonClicked');

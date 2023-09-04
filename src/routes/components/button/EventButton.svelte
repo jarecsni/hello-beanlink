@@ -9,12 +9,12 @@
     import { buttonClicked as _buttonClicked } from './types';
 	
     export let label:string;
-    export let buttonClicked:BeanLinkEventCreator<boolean> = _buttonClicked;
+    export let buttonClicked:BeanLinkEventCreator<void> = _buttonClicked;
     export let disabled = false;
 
     const beanLink:BeanLink = BeanLink.getInstance().beanLink;
     
     function onClick() {
-        beanLink.publish(buttonClicked.event(true));
+        beanLink.publish(buttonClicked.event());
     }
 </script>
