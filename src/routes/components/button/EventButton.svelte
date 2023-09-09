@@ -12,7 +12,7 @@
     export let buttonClicked:BeanLinkEventCreator<void> = _buttonClicked;
     export let disabled = false;
 
-    const beanLink:BeanLink = BeanLink.getInstance().beanLink;
+    const {beanLink} = BeanLink.getInstance();
     
     function onClick() {
         beanLink.publish(buttonClicked.event());
