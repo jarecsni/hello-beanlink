@@ -23,7 +23,7 @@ export class BookingFeature implements Feature {
                 setTimeout(() => {
                     beanLink.publish(bookDealDone.event());
                 }, 2000);
-            }, false);
+            }, {weak: false});
         });
     }
     get name() {

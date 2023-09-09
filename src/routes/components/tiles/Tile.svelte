@@ -31,7 +31,7 @@
 
 <script lang="ts">
     import IconButton from '@smui/icon-button';
-	import { BeanLink } from 'beanlink';
+	import { BeanLink, type BeanLinkPredicate } from 'beanlink';
 	import Select, { Option } from '@smui/select';
 	import { Streamer } from '../../datastream/Streamer';
 	import { 
@@ -69,13 +69,14 @@
     }
 
     const priceTickListener = (event: ReturnType<typeof priceTickReceived.event>)=> {
-        if (event.value.symbol === selectedSymbol) {
-            // FIXME this is not nice to filter like this - need to be able to filter earlier on
-            price = event.value.value;
-            beanLink.publish(priceLabelSetValue.event(price));
-        }
+        console.log('Tile with ' + selectedSymbol + ' received event for ' + event.value.symbol);
+        price = event.value.value;
+        beanLink.publish(priceLabelSetValue.event(price));
     };
-    parentBeanLink.on(priceTickReceived, priceTickListener);
+    const predicate = (event: ReturnType<typeof priceTickReceived.event>) => (
+        event.value.symbol === selectedSymbol
+    );
+    parentBeanLink.on(priceTickReceived, priceTickListener, {predicate});
 
     const buttonListener = () => {
         bookingInProgress = true;
